@@ -3,5 +3,4 @@ MAINTAINER Sebastien Delisle <seb0del@gmail.com>
 
 RUN echo "deb http://apt.anybox.fr/openerp common main" >> /etc/apt/sources.list
 RUN apt-get update
-ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get install -y --force-yes openerp-server-system-build-deps
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --force-yes openerp-server-system-build-deps postgresql-client-common postgresql-client-9.3
